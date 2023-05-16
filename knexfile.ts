@@ -1,3 +1,13 @@
-import { config } from './src/database'
+import type { Knex } from 'knex'
 
-export default config
+import { config as configKnex } from './src/database'
+
+// Update with your config settings.
+
+const config: { [key: string]: Knex.Config } = {
+  development: {
+    ...configKnex,
+  },
+}
+
+module.exports = config
